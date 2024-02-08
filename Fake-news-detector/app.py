@@ -8,8 +8,8 @@ import logging
 
 app = Flask(__name__)
 
-model = pickle.load(open('model2.pkl', 'rb'))
-tfidfvect = pickle.load(open('tfidfvect2.pkl', 'rb'))
+model = pickle.load(open('Fake-news-detector/model2.pkl', 'rb'))
+tfidfvect = pickle.load(open('Fake-news-detector/tfidfvect2.pkl', 'rb'))
 
 ps = PorterStemmer()
 
@@ -22,6 +22,7 @@ def predict(text):
     review = ' '.join(review)
     review_vect = tfidfvect.transform([review])
     prediction = 'This is Real news' if model.predict(review_vect) == 'REAL' else 'This is Fake news'
+
     return prediction
 
 
