@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Predictor</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <p>A fake news prediction web application using Machine Learning Algorithms, deployed using Flask and Vercel.</p>
+
+        <form id="predictionForm" action="{{ url_for('webapp') }}" method="post">
+            <div class="form-group">
+                <textarea class="jTextarea" name="text" id="jTextarea" cols="30" rows="10" placeholder="Write your text here..." required>{{ text }}</textarea>
+                <br>
+                <button class="button button1" type="submit" name="predict">Predict News</button>
+            </div>
+        </form>
+
+        {% if result %}
+            <p id="result">{{ result }}</p>
+        {% endif %}
+    </div>
+
+    <script src="../static/script.js"></script>
+</body>
+</html>

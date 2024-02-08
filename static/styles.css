@@ -1,0 +1,86 @@
+body {
+    background-color: #f0f0f0;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /* For background animation */
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.85); /* Glassmorphism effect */
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(4px); /* Glassmorphism effect */
+    -webkit-backdrop-filter: blur(4px);
+    overflow: hidden; /* For background animation */
+    width: 80%; /* Adjust width for mobile */
+    max-width: 400px; /* Set max-width to control the container size */
+    margin: 20px; /* Add margin for spacing on mobile */
+    padding: 20px; /* Adjust padding for mobile */
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Glassmorphism effect */
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#result {
+    font-family: 'Arial', Courier, monospace;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-top: 30px;
+    color: #4CAF50; /* Default color */
+    opacity: 0; /* Initially hidden for animation */
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Animation for result display */
+#result.fade-in {
+    opacity: 1;
+}
+
+/* Color-based results */
+body.real {
+    background-color: #d4edda; /* Greenish background */
+}
+
+body.false {
+    background-color: #f8d7da; /* Reddish background */
+}
+
+/* Media query for mobile responsiveness */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%; /* Adjust width for smaller screens */
+        margin: 10px; /* Add margin for spacing on smaller screens */
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+}
