@@ -1,0 +1,16 @@
+{
+    "version": 2,
+       "builds": [
+           {
+              "src": "Fake-news-detector/app.py",
+              "use": "@vercel/python"
+            }
+       ],
+       "routes": [
+           {
+              "src": "/(.*)",
+              "dest": "Fake-news-detector/app.py"
+            }
+       ]
+   }
+  
