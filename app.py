@@ -1,10 +1,9 @@
 from flask import Flask, render_template, request, jsonify
 import pickle
 import re
-import nltk
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
-import logging
+
 
 app = Flask(__name__)
 
@@ -21,6 +20,8 @@ def predict(text):
     review = [ps.stem(word) for word in review if not word in stopwords.words('english')]
     review = ' '.join(review)
     review_vect = tfidfvect.transform([review])
+    print(review_vect)
+    print(model.predict(review_vect))
     prediction = 'This is Real news' if model.predict(review_vect) == 'REAL' else 'This is Fake news'
 
     return prediction
