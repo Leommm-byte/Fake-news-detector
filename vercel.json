@@ -3,7 +3,7 @@
        "builds": [
            {
               "src": "Fake-news-detector/app.py",
-              "use": "@liudonghua123/now-flask"
+              "use": "@vercel/python"
             }
        ],
        "routes": [
